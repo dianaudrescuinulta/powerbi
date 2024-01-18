@@ -1,0 +1,87 @@
+{
+  "version": "1.1.0",
+  "diagrams": [
+    {
+      "ordinal": 0,
+      "scrollPosition": {
+        "x": 0,
+        "y": 0
+      },
+      "nodes": [
+        {
+          "location": {
+            "x": 241,
+            "y": 263
+          },
+          "nodeIndex": "BI Capex AssetEventTypes",
+          "nodeLineageTag": "9e406cdc-bbfe-466f-9e5f-df5d5bcde6e0",
+          "size": {
+            "height": 160,
+            "width": 258
+          },
+          "zIndex": 1
+        },
+        {
+          "location": {
+            "x": 860.99999618530273,
+            "y": 237
+          },
+          "nodeIndex": "BI Capex Assets",
+          "nodeLineageTag": "3facee45-b3c0-4689-a53e-5330d790ff81",
+          "size": {
+            "height": 248,
+            "width": 234
+          },
+          "zIndex": 2
+        },
+        {
+          "location": {
+            "x": 861,
+            "y": 0
+          },
+          "nodeIndex": "BI Capex Categories",
+          "nodeLineageTag": "1d4191ee-c839-47b3-904a-4333e9e506ef",
+          "size": {
+            "height": 152,
+            "width": 234
+          },
+          "zIndex": 3
+        },
+        {
+          "location": {
+            "x": 569,
+            "y": 244
+          },
+          "nodeIndex": "BI Capex Facts",
+          "nodeLineageTag": "896e91b6-ade5-4fac-8adf-3f5a8b39a7db",
+          "size": {
+            "height": 224,
+            "width": 234
+          },
+          "zIndex": 5
+        },
+        {
+          "location": {
+            "x": 565.94999694824219,
+            "y": 566
+          },
+          "nodeIndex": "BI Dates",
+          "nodeLineageTag": "ed249aa1-1c46-4126-8719-e51fab136629",
+          "size": {
+            "height": 176,
+            "width": 234
+          },
+          "zIndex": 4
+        }
+      ],
+      "name": "All tables",
+      "zoomValue": 80,
+      "pinKeyFieldsToTop": false,
+      "showExtraHeaderInfo": false,
+      "hideKeyFieldsWhenCollapsed": false,
+      "tablesLocked": false
+    }
+  ],
+  "selectedDiagram": "All tables",
+  "defaultDiagram": "All tables"
+}

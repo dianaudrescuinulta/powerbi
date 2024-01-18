@@ -1,0 +1,1295 @@
+{
+  "compatibilityLevel": 1567,
+  "model": {
+    "annotations": [
+      {
+        "name": "PBI_QueryOrder",
+        "value": "[\"BI Capex Facts\",\"BI Capex Categories\",\"BI Capex Assets\",\"BI Capex AssetEventTypes\",\"BI Dates\"]"
+      },
+      {
+        "name": "__PBI_TimeIntelligenceEnabled",
+        "value": "1"
+      },
+      {
+        "name": "PBIDesktopVersion",
+        "value": "2.124.1554.0 (23.12)"
+      },
+      {
+        "name": "PBI_ProTooling",
+        "value": "[\"DevMode\"]"
+      }
+    ],
+    "culture": "en-US",
+    "cultures": [
+      {
+        "name": "en-US",
+        "linguisticMetadata": {
+          "content": {
+            "DynamicImprovement": "HighConfidence",
+            "Language": "en-US",
+            "Version": "1.0.0"
+          },
+          "contentType": "json"
+        }
+      }
+    ],
+    "dataAccessOptions": {
+      "legacyRedirects": true,
+      "returnErrorValuesAsNull": true
+    },
+    "defaultPowerBIDataSourceVersion": "powerBI_V3",
+    "relationships": [
+      {
+        "name": "ef513669-7997-418b-9405-c2d686575d1a",
+        "fromColumn": "AssetId",
+        "fromTable": "BI Capex Facts",
+        "toColumn": "AssetId",
+        "toTable": "BI Capex Assets"
+      },
+      {
+        "name": "b2811e7d-8a91-4e62-b47c-575d6818b182",
+        "fromColumn": "CategoryId",
+        "fromTable": "BI Capex Assets",
+        "toColumn": "Id",
+        "toTable": "BI Capex Categories"
+      },
+      {
+        "name": "1db0c997-3737-4235-b84f-c536347ec696",
+        "fromColumn": "Date",
+        "fromTable": "BI Capex Facts",
+        "toColumn": "Day",
+        "toTable": "BI Dates"
+      },
+      {
+        "name": "7eb1473b-44e2-40b4-b53f-ca26af167f17",
+        "fromColumn": "EventTypeId",
+        "fromTable": "BI Capex Facts",
+        "toColumn": "Id",
+        "toTable": "BI Capex AssetEventTypes"
+      },
+      {
+        "name": "3ffdfb9f-4894-462c-b295-02c85bedb3cc",
+        "fromColumn": "PurchaseDate",
+        "fromTable": "BI Capex Assets",
+        "joinOnDateBehavior": "datePartOnly",
+        "toColumn": "Date",
+        "toTable": "LocalDateTable_cb8e5509-75d1-4a14-ba9a-dcf8b67e8055"
+      }
+    ],
+    "sourceQueryCulture": "en-US",
+    "tables": [
+      {
+        "name": "BI Capex Facts",
+        "annotations": [
+          {
+            "name": "PBI_ResultType",
+            "value": "Table"
+          },
+          {
+            "name": "PBI_NavigationStepName",
+            "value": "Navigation"
+          }
+        ],
+        "changedProperties": [
+          {
+            "property": "IsHidden"
+          }
+        ],
+        "columns": [
+          {
+            "name": "AssetId",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "IsHidden"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "e2b85777-43f8-4d66-83b7-635937eac45c",
+            "sourceColumn": "AssetId",
+            "sourceProviderType": "nvarchar(500)",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Scenarioid",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "IsHidden"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "17e39f08-4eaf-4418-bc04-4dcaf218b277",
+            "sourceColumn": "Scenarioid",
+            "sourceProviderType": "int",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "Measure",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "IsHidden"
+              }
+            ],
+            "dataType": "string",
+            "isNullable": false,
+            "lineageTag": "f535ccaf-0972-4b7f-b127-cd9e6e270fb6",
+            "sourceColumn": "Measure",
+            "sourceProviderType": "varchar(33)",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Date",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "UnderlyingDateTimeDataType",
+                "value": "Date"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "IsHidden"
+              }
+            ],
+            "dataType": "dateTime",
+            "formatString": "Long Date",
+            "lineageTag": "fe66f9cd-a8a3-4a05-9428-2bfdc597055f",
+            "sourceColumn": "Date",
+            "sourceProviderType": "date",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Amount",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"currencyCulture\":\"en-US\"}"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "IsHidden"
+              }
+            ],
+            "dataType": "decimal",
+            "formatString": "\\$#,0.###############;(\\$#,0.###############);\\$#,0.###############",
+            "lineageTag": "886ea5a2-f72b-4448-9fc7-f929a200fd61",
+            "sourceColumn": "Amount",
+            "sourceProviderType": "money",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "EventTypeId",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "IsHidden"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "bbfd94ba-5b46-4131-be67-bde71713533c",
+            "sourceColumn": "EventTypeId",
+            "sourceProviderType": "smallint",
+            "summarizeBy": "none"
+          }
+        ],
+        "lineageTag": "896e91b6-ade5-4fac-8adf-3f5a8b39a7db",
+        "measures": [
+          {
+            "name": "GBV Ending Balace",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"currencyCulture\":\"en-US\"}"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "IsHidden"
+              }
+            ],
+            "expression": [
+              "",
+              "VAR CurrentDate = MAX('BI Capex Facts'[Date])",
+              "VAR CumulativeBalance = ",
+              "    CALCULATE(",
+              "        SUM('BI Capex Facts'[Amount]), ",
+              "        FILTER(",
+              "            'BI Capex Facts', ",
+              "            'BI Capex Facts'[Date] <= CurrentDate ",
+              "            ",
+              "        ),",
+              "        FILTER(ALL('BI Capex Facts'), 'BI Capex Facts'[Measure] == \"Gross Book Value (Ending Balance)\")",
+              "    )",
+              "RETURN",
+              "    CumulativeBalance"
+            ],
+            "formatString": "\\$#,0.###############;(\\$#,0.###############);\\$#,0.###############",
+            "lineageTag": "1634a8eb-58e0-489f-9070-616d88c881ba"
+          },
+          {
+            "name": "Depreciation",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"currencyCulture\":\"en-US\"}"
+              }
+            ],
+            "expression": [
+              "",
+              "SUMX(",
+              "    FILTER(",
+              "        'BI Capex Facts', ",
+              "        'BI Capex Facts'[Measure] == \"Depreciation\"",
+              "    ), ",
+              "    'BI Capex Facts'[Amount]",
+              ")"
+            ],
+            "formatString": "\\$#,0.###############;(\\$#,0.###############);\\$#,0.###############",
+            "lineageTag": "1403fb3f-5e91-4f41-b347-2e2bc31c0954"
+          },
+          {
+            "name": "Net Book Value (Closing Balance)",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"currencyCulture\":\"en-US\"}"
+              }
+            ],
+            "expression": [
+              "",
+              "VAR IsMonthlyView = ISINSCOPE('BI Dates'[Month])",
+              "VAR IsQuarterlyView = ISINSCOPE('BI Dates'[Quarter])",
+              "VAR IsYearlyView = ISINSCOPE('BI Dates'[Year])",
+              "",
+              "RETURN",
+              "    IF(",
+              "        IsMonthlyView,",
+              "        CALCULATE(",
+              "            SUM('BI Capex Facts'[Amount]),",
+              "            'BI Capex Facts'[Measure] == \"Net Book Value (Closing Balance)\"",
+              "        ),",
+              "        IF(",
+              "            IsQuarterlyView,",
+              "            CALCULATE(",
+              "                LASTNONBLANKVALUE(",
+              "                    'BI Dates'[Month],",
+              "                    CALCULATE(",
+              "                        SUM('BI Capex Facts'[Amount]),",
+              "                        'BI Capex Facts'[Measure] == \"Net Book Value (Closing Balance)\"",
+              "                    )",
+              "                ),",
+              "                DATESBETWEEN(",
+              "                    'BI Dates'[Day],",
+              "                    STARTOFQUARTER('BI Dates'[Day]),",
+              "                    ENDOFQUARTER('BI Dates'[Day])",
+              "                )",
+              "            ),",
+              "            IF(",
+              "                IsYearlyView,",
+              "                CALCULATE(",
+              "                    LASTNONBLANKVALUE(",
+              "                        'BI Dates'[Month],",
+              "                        CALCULATE(",
+              "                            SUM('BI Capex Facts'[Amount]),",
+              "                            'BI Capex Facts'[Measure] == \"Net Book Value (Closing Balance)\"",
+              "                        )",
+              "                    ),",
+              "                    DATESBETWEEN(",
+              "                        'BI Dates'[Day],",
+              "                        STARTOFYEAR('BI Dates'[Day]),",
+              "                        ENDOFYEAR('BI Dates'[Day])",
+              "                    )",
+              "                ),",
+              "                BLANK()",
+              "            )",
+              "        )",
+              "    )",
+              ""
+            ],
+            "formatString": "\\$#,0.###############;(\\$#,0.###############);\\$#,0.###############",
+            "lineageTag": "31c23ae6-338a-40bc-9b5f-8dd1bd5eb31f"
+          },
+          {
+            "name": "GBV2",
+            "expression": [
+              "",
+              "VAR CurrentDate = MAX('BI Dates'[Day])",
+              "VAR CumulativeBalance =",
+              "    CALCULATE(",
+              "        SUM('BI Capex Facts'[Amount]),",
+              "        FILTER(",
+              "            ALL('BI Dates'),",
+              "            'BI Dates'[Day] <= CurrentDate &&",
+              "            NOT(ISBLANK(SUM('BI Capex Facts'[Amount])))",
+              "        ),'BI Capex Facts'[Measure] = \"Gross Book Value (Ending Balance)\"",
+              "    )",
+              "RETURN",
+              "    CumulativeBalance"
+            ],
+            "formatString": "\"€\"\\ #,0.00;-\"€\"\\ #,0.00;\"€\"\\ #,0.00",
+            "lineageTag": "3871c90a-6f05-417f-8706-8457465a503d"
+          },
+          {
+            "name": "Depreciation2",
+            "expression": [
+              "",
+              "SUMX(",
+              "    FILTER(",
+              "        'BI Capex Facts',",
+              "        'BI Capex Facts'[Measure] = \"Depreciation\"",
+              "    ),",
+              "    'BI Capex Facts'[Amount]",
+              ")"
+            ],
+            "formatString": "\"€\"\\ #,0;-\"€\"\\ #,0;\"€\"\\ #,0",
+            "lineageTag": "b12b4104-8f4f-4d5d-9eef-208e8ed67ddf"
+          },
+          {
+            "name": "Accumulated Depreciation",
+            "expression": [
+              "",
+              "VAR CurrentDate = MAX('BI Dates'[Day])",
+              "VAR CumulativeBalance =",
+              "    CALCULATE(",
+              "        SUM('BI Capex Facts'[Amount]),",
+              "        FILTER(",
+              "            ALL('BI Dates'),",
+              "            'BI Dates'[Day] <= CurrentDate &&",
+              "            NOT(ISBLANK(SUM('BI Capex Facts'[Amount])))",
+              "        ),'BI Capex Facts'[Measure] = \"Depreciation\"",
+              "    )",
+              "RETURN",
+              "    CumulativeBalance"
+            ],
+            "formatString": "\"€\"\\ #,0;-\"€\"\\ #,0;\"€\"\\ #,0",
+            "lineageTag": "ea72012f-0b76-41f9-a553-feb53a777e29"
+          },
+          {
+            "name": "NBV",
+            "expression": "[GBV2] - [Accumulated Depreciation]",
+            "formatString": "\"€\"\\ #,0;-\"€\"\\ #,0;\"€\"\\ #,0",
+            "lineageTag": "6e4e1316-de42-441a-954a-479c849753d9"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "BI Capex Facts",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "let",
+                "    Source = Sql.Databases(\"sql-apex-dev-northeurope-001.database.windows.net\"),",
+                "    Inulta = Source{[Name=\"Inulta\"]}[Data],",
+                "    BI.Capex_Facts = Inulta{[Schema=\"BI.Capex\",Item=\"Facts\"]}[Data]",
+                "in",
+                "    BI.Capex_Facts"
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "BI Capex Categories",
+        "annotations": [
+          {
+            "name": "PBI_ResultType",
+            "value": "Table"
+          },
+          {
+            "name": "PBI_NavigationStepName",
+            "value": "Navigation"
+          }
+        ],
+        "columns": [
+          {
+            "name": "Id",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "isNullable": false,
+            "lineageTag": "b19302ab-08c1-423f-b14d-80b7112c6da3",
+            "sourceColumn": "Id",
+            "sourceProviderType": "int",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Name",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "isNullable": false,
+            "lineageTag": "c62c18f2-6ebb-45fa-adb9-4ef724c2964d",
+            "sourceColumn": "Name",
+            "sourceProviderType": "nvarchar(500)",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "ActivationDelayInDays",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "isNullable": false,
+            "lineageTag": "4dd99cba-a92d-4ad3-8590-47af0d4947a2",
+            "sourceColumn": "ActivationDelayInDays",
+            "sourceProviderType": "int",
+            "summarizeBy": "none"
+          }
+        ],
+        "lineageTag": "1d4191ee-c839-47b3-904a-4333e9e506ef",
+        "partitions": [
+          {
+            "name": "BI Capex Categories",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "let",
+                "    Source = Sql.Databases(\"sql-apex-dev-northeurope-001.database.windows.net\"),",
+                "    Inulta = Source{[Name=\"Inulta\"]}[Data],",
+                "    BI.Capex_Categories = Inulta{[Schema=\"BI.Capex\",Item=\"Categories\"]}[Data]",
+                "in",
+                "    BI.Capex_Categories"
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "BI Capex Assets",
+        "annotations": [
+          {
+            "name": "PBI_ResultType",
+            "value": "Table"
+          },
+          {
+            "name": "PBI_NavigationStepName",
+            "value": "Navigation"
+          }
+        ],
+        "columns": [
+          {
+            "name": "AssetId",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "isNullable": false,
+            "lineageTag": "2a41f2c7-0252-4ddb-87b1-5234a5c8a727",
+            "sourceColumn": "AssetId",
+            "sourceProviderType": "nvarchar(500)",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Scenarioid",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "abc73110-4ebf-48ab-b352-94dbe99da56f",
+            "sourceColumn": "Scenarioid",
+            "sourceProviderType": "int",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "Name",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "isNullable": false,
+            "lineageTag": "2d9062de-b2cd-44d5-b989-8501e4f702a8",
+            "sourceColumn": "Name",
+            "sourceProviderType": "nvarchar(500)",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "PurchaseDate",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "UnderlyingDateTimeDataType",
+                "value": "Date"
+              }
+            ],
+            "dataType": "dateTime",
+            "formatString": "Long Date",
+            "isNullable": false,
+            "lineageTag": "df60fd0e-19cc-40d3-8889-3f35e9183722",
+            "sourceColumn": "PurchaseDate",
+            "sourceProviderType": "date",
+            "summarizeBy": "none",
+            "variations": [
+              {
+                "name": "Variation",
+                "defaultHierarchy": {
+                  "hierarchy": "Date Hierarchy",
+                  "table": "LocalDateTable_cb8e5509-75d1-4a14-ba9a-dcf8b67e8055"
+                },
+                "isDefault": true,
+                "relationship": "3ffdfb9f-4894-462c-b295-02c85bedb3cc"
+              }
+            ]
+          },
+          {
+            "name": "PurchaseCost",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"currencyCulture\":\"en-US\"}"
+              }
+            ],
+            "dataType": "decimal",
+            "formatString": "\\$#,0.###############;(\\$#,0.###############);\\$#,0.###############",
+            "isNullable": false,
+            "lineageTag": "f9439c6d-1b90-4ec8-babb-50f8fe215a5e",
+            "sourceColumn": "PurchaseCost",
+            "sourceProviderType": "money",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "UsefulLifeInMonths",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "1b78e0eb-c5c4-4140-be15-ec3522e6ecba",
+            "sourceColumn": "UsefulLifeInMonths",
+            "sourceProviderType": "int",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "CategoryId",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "1bd7d272-643b-4eac-913e-d0b6868c3055",
+            "sourceColumn": "CategoryId",
+            "sourceProviderType": "int",
+            "summarizeBy": "none"
+          }
+        ],
+        "lineageTag": "3facee45-b3c0-4689-a53e-5330d790ff81",
+        "partitions": [
+          {
+            "name": "BI Capex Assets",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "let",
+                "    Source = Sql.Databases(\"sql-apex-dev-northeurope-001.database.windows.net\"),",
+                "    Inulta = Source{[Name=\"Inulta\"]}[Data],",
+                "    BI.Capex_Assets = Inulta{[Schema=\"BI.Capex\",Item=\"Assets\"]}[Data]",
+                "in",
+                "    BI.Capex_Assets"
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "BI Capex AssetEventTypes",
+        "annotations": [
+          {
+            "name": "PBI_ResultType",
+            "value": "Table"
+          },
+          {
+            "name": "PBI_NavigationStepName",
+            "value": "Navigation"
+          }
+        ],
+        "columns": [
+          {
+            "name": "Name",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "isNullable": false,
+            "lineageTag": "32da2b15-d3ca-40df-be90-2f89ed398835",
+            "sourceColumn": "Name",
+            "sourceProviderType": "nvarchar(500)",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Order",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "isNullable": false,
+            "lineageTag": "cc77873e-11c4-4a3e-b0d9-34ca784d7170",
+            "sourceColumn": "Order",
+            "sourceProviderType": "int",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Id",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "isNullable": false,
+            "lineageTag": "dbf278ef-0aa6-4fbf-8a72-37c29b595f8e",
+            "sourceColumn": "Id",
+            "sourceProviderType": "smallint",
+            "summarizeBy": "none"
+          }
+        ],
+        "lineageTag": "9e406cdc-bbfe-466f-9e5f-df5d5bcde6e0",
+        "partitions": [
+          {
+            "name": "BI Capex AssetEventTypes",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "let",
+                "    Source = Sql.Databases(\"sql-apex-dev-northeurope-001.database.windows.net\"),",
+                "    Inulta = Source{[Name=\"Inulta\"]}[Data],",
+                "    BI.Capex_AssetEventTypes = Inulta{[Schema=\"BI.Capex\",Item=\"AssetEventTypes\"]}[Data]",
+                "in",
+                "    BI.Capex_AssetEventTypes"
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "BI Dates",
+        "annotations": [
+          {
+            "name": "PBI_ResultType",
+            "value": "Table"
+          },
+          {
+            "name": "PBI_NavigationStepName",
+            "value": "Navigation"
+          }
+        ],
+        "columns": [
+          {
+            "name": "Day",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "UnderlyingDateTimeDataType",
+                "value": "Date"
+              }
+            ],
+            "dataType": "dateTime",
+            "formatString": "Long Date",
+            "isKey": true,
+            "isNullable": false,
+            "lineageTag": "054ff1f6-0ae7-4d39-bae9-d902ea761692",
+            "sourceColumn": "Day",
+            "sourceProviderType": "date",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Year",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "isNullable": false,
+            "lineageTag": "2fe6a165-febd-4412-860b-525b0bdff12b",
+            "sourceColumn": "Year",
+            "sourceProviderType": "smallint",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Quarter",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "isNullable": false,
+            "lineageTag": "660a7152-dbf8-492b-a1ab-edac7a4e05c1",
+            "sourceColumn": "Quarter",
+            "sourceProviderType": "nvarchar(5)",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Month",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "isNullable": false,
+            "lineageTag": "ac122720-3e51-4e8b-8032-db8d4fb7b43f",
+            "sourceColumn": "Month",
+            "sourceProviderType": "tinyint",
+            "summarizeBy": "none"
+          }
+        ],
+        "dataCategory": "Time",
+        "hierarchies": [
+          {
+            "name": "Year Hierarchy",
+            "levels": [
+              {
+                "name": "Year",
+                "column": "Year",
+                "lineageTag": "0ea79cd9-d80f-4225-8ea3-04cb3263e9d3",
+                "ordinal": 0
+              },
+              {
+                "name": "Quarter",
+                "column": "Quarter",
+                "lineageTag": "8085abcd-6de6-4087-9b8c-44b54a336180",
+                "ordinal": 1
+              },
+              {
+                "name": "Month",
+                "column": "Month",
+                "lineageTag": "029ded8b-fdc5-4557-bbde-7f574ab9fc2f",
+                "ordinal": 2
+              },
+              {
+                "name": "Day",
+                "column": "Day",
+                "lineageTag": "3c484547-7ab1-4268-af4a-5f86877eabf1",
+                "ordinal": 3
+              }
+            ],
+            "lineageTag": "fd29ab4e-8613-4daf-824a-b0458825bdd6"
+          }
+        ],
+        "lineageTag": "ed249aa1-1c46-4126-8719-e51fab136629",
+        "partitions": [
+          {
+            "name": "BI Dates",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "let",
+                "    Source = Sql.Databases(\"sql-apex-dev-northeurope-001.database.windows.net\"),",
+                "    Inulta = Source{[Name=\"Inulta\"]}[Data],",
+                "    BI_Dates = Inulta{[Schema=\"BI\",Item=\"Dates\"]}[Data]",
+                "in",
+                "    BI_Dates"
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "DateTableTemplate_77a48d80-31c0-41c8-a565-fce732a5c62a",
+        "annotations": [
+          {
+            "name": "__PBI_TemplateDateTable",
+            "value": "true"
+          },
+          {
+            "name": "DefaultItem",
+            "value": "DateHierarchy"
+          }
+        ],
+        "columns": [
+          {
+            "name": "Date",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              }
+            ],
+            "dataCategory": "PaddedDateTableDates",
+            "dataType": "dateTime",
+            "formatString": "General Date",
+            "isHidden": true,
+            "isNameInferred": true,
+            "lineageTag": "9e9d4ec7-3ed1-4e1c-a031-033d36706152",
+            "sourceColumn": "[Date]",
+            "summarizeBy": "none",
+            "type": "calculatedTableColumn"
+          },
+          {
+            "name": "Year",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              },
+              {
+                "name": "TemplateId",
+                "value": "Year"
+              }
+            ],
+            "dataCategory": "Years",
+            "dataType": "int64",
+            "expression": "YEAR([Date])",
+            "formatString": "0",
+            "isHidden": true,
+            "lineageTag": "030dd403-d7ce-4481-a8b5-21cafe52dd4c",
+            "summarizeBy": "none",
+            "type": "calculated"
+          },
+          {
+            "name": "MonthNo",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              },
+              {
+                "name": "TemplateId",
+                "value": "MonthNumber"
+              }
+            ],
+            "dataCategory": "MonthOfYear",
+            "dataType": "int64",
+            "expression": "MONTH([Date])",
+            "formatString": "0",
+            "isHidden": true,
+            "lineageTag": "84e215e8-5bc2-4754-9f03-d0c70c98878d",
+            "summarizeBy": "none",
+            "type": "calculated"
+          },
+          {
+            "name": "Month",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              },
+              {
+                "name": "TemplateId",
+                "value": "Month"
+              }
+            ],
+            "dataCategory": "Months",
+            "dataType": "string",
+            "expression": "FORMAT([Date], \"MMMM\")",
+            "isHidden": true,
+            "lineageTag": "d80e838e-80d0-43e7-a13c-687dd168d491",
+            "sortByColumn": "MonthNo",
+            "summarizeBy": "none",
+            "type": "calculated"
+          },
+          {
+            "name": "QuarterNo",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              },
+              {
+                "name": "TemplateId",
+                "value": "QuarterNumber"
+              }
+            ],
+            "dataCategory": "QuarterOfYear",
+            "dataType": "int64",
+            "expression": "INT(([MonthNo] + 2) / 3)",
+            "formatString": "0",
+            "isHidden": true,
+            "lineageTag": "ad3c7e24-6e88-45fa-9062-85030abade50",
+            "summarizeBy": "none",
+            "type": "calculated"
+          },
+          {
+            "name": "Quarter",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              },
+              {
+                "name": "TemplateId",
+                "value": "Quarter"
+              }
+            ],
+            "dataCategory": "Quarters",
+            "dataType": "string",
+            "expression": "\"Qtr \" & [QuarterNo]",
+            "isHidden": true,
+            "lineageTag": "397477c7-5e85-4d08-892c-d5773702c1a4",
+            "sortByColumn": "QuarterNo",
+            "summarizeBy": "none",
+            "type": "calculated"
+          },
+          {
+            "name": "Day",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              },
+              {
+                "name": "TemplateId",
+                "value": "Day"
+              }
+            ],
+            "dataCategory": "DayOfMonth",
+            "dataType": "int64",
+            "expression": "DAY([Date])",
+            "formatString": "0",
+            "isHidden": true,
+            "lineageTag": "1bb414bb-c3b6-458f-affb-d8b7931d7d55",
+            "summarizeBy": "none",
+            "type": "calculated"
+          }
+        ],
+        "hierarchies": [
+          {
+            "name": "Date Hierarchy",
+            "annotations": [
+              {
+                "name": "TemplateId",
+                "value": "DateHierarchy"
+              }
+            ],
+            "levels": [
+              {
+                "name": "Year",
+                "column": "Year",
+                "lineageTag": "e8d2ff97-9647-44f4-ba75-67ab5d2259d4",
+                "ordinal": 0
+              },
+              {
+                "name": "Quarter",
+                "column": "Quarter",
+                "lineageTag": "2c4c2c8e-3a95-445a-bb2b-d26516427597",
+                "ordinal": 1
+              },
+              {
+                "name": "Month",
+                "column": "Month",
+                "lineageTag": "ca63a27a-84aa-492c-8aa7-aa51e46f30a7",
+                "ordinal": 2
+              },
+              {
+                "name": "Day",
+                "column": "Day",
+                "lineageTag": "190f0f7e-d0f5-4b42-a9dd-a560d66be336",
+                "ordinal": 3
+              }
+            ],
+            "lineageTag": "00f655b2-a7b0-4979-b255-b414969ab4d3"
+          }
+        ],
+        "isHidden": true,
+        "isPrivate": true,
+        "lineageTag": "6a2924ff-c03c-44a6-95ad-7d92c76da333",
+        "partitions": [
+          {
+            "name": "DateTableTemplate_77a48d80-31c0-41c8-a565-fce732a5c62a",
+            "mode": "import",
+            "source": {
+              "expression": "Calendar(Date(2015,1,1), Date(2015,1,1))",
+              "type": "calculated"
+            }
+          }
+        ]
+      },
+      {
+        "name": "LocalDateTable_cb8e5509-75d1-4a14-ba9a-dcf8b67e8055",
+        "annotations": [
+          {
+            "name": "__PBI_LocalDateTable",
+            "value": "true"
+          }
+        ],
+        "columns": [
+          {
+            "name": "Date",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              }
+            ],
+            "dataCategory": "PaddedDateTableDates",
+            "dataType": "dateTime",
+            "formatString": "General Date",
+            "isHidden": true,
+            "isNameInferred": true,
+            "lineageTag": "320a8a4e-807c-44b5-b07d-3d7ef9b1d777",
+            "sourceColumn": "[Date]",
+            "summarizeBy": "none",
+            "type": "calculatedTableColumn"
+          },
+          {
+            "name": "Year",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              },
+              {
+                "name": "TemplateId",
+                "value": "Year"
+              }
+            ],
+            "dataCategory": "Years",
+            "dataType": "int64",
+            "expression": "YEAR([Date])",
+            "formatString": "0",
+            "isHidden": true,
+            "lineageTag": "c1010d30-e35b-4e02-b650-d47e58cf9f00",
+            "summarizeBy": "none",
+            "type": "calculated"
+          },
+          {
+            "name": "MonthNo",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              },
+              {
+                "name": "TemplateId",
+                "value": "MonthNumber"
+              }
+            ],
+            "dataCategory": "MonthOfYear",
+            "dataType": "int64",
+            "expression": "MONTH([Date])",
+            "formatString": "0",
+            "isHidden": true,
+            "lineageTag": "c20b9428-b42d-47f0-8e9d-33237da203b9",
+            "summarizeBy": "none",
+            "type": "calculated"
+          },
+          {
+            "name": "Month",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              },
+              {
+                "name": "TemplateId",
+                "value": "Month"
+              }
+            ],
+            "dataCategory": "Months",
+            "dataType": "string",
+            "expression": "FORMAT([Date], \"MMMM\")",
+            "isHidden": true,
+            "lineageTag": "2a57c0da-ded7-4ec7-a0af-096bca5506ec",
+            "sortByColumn": "MonthNo",
+            "summarizeBy": "none",
+            "type": "calculated"
+          },
+          {
+            "name": "QuarterNo",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              },
+              {
+                "name": "TemplateId",
+                "value": "QuarterNumber"
+              }
+            ],
+            "dataCategory": "QuarterOfYear",
+            "dataType": "int64",
+            "expression": "INT(([MonthNo] + 2) / 3)",
+            "formatString": "0",
+            "isHidden": true,
+            "lineageTag": "9f005361-d6b2-4856-9a54-c0206432d208",
+            "summarizeBy": "none",
+            "type": "calculated"
+          },
+          {
+            "name": "Quarter",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              },
+              {
+                "name": "TemplateId",
+                "value": "Quarter"
+              }
+            ],
+            "dataCategory": "Quarters",
+            "dataType": "string",
+            "expression": "\"Qtr \" & [QuarterNo]",
+            "isHidden": true,
+            "lineageTag": "735fb6c2-6023-4618-9dfa-0dfc6fc97115",
+            "sortByColumn": "QuarterNo",
+            "summarizeBy": "none",
+            "type": "calculated"
+          },
+          {
+            "name": "Day",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              },
+              {
+                "name": "TemplateId",
+                "value": "Day"
+              }
+            ],
+            "dataCategory": "DayOfMonth",
+            "dataType": "int64",
+            "expression": "DAY([Date])",
+            "formatString": "0",
+            "isHidden": true,
+            "lineageTag": "44ed7652-bc5e-450d-ae56-3eec7bd15bcf",
+            "summarizeBy": "none",
+            "type": "calculated"
+          }
+        ],
+        "hierarchies": [
+          {
+            "name": "Date Hierarchy",
+            "annotations": [
+              {
+                "name": "TemplateId",
+                "value": "DateHierarchy"
+              }
+            ],
+            "levels": [
+              {
+                "name": "Year",
+                "column": "Year",
+                "lineageTag": "93742272-3909-462e-a30f-f97d942518d7",
+                "ordinal": 0
+              },
+              {
+                "name": "Quarter",
+                "column": "Quarter",
+                "lineageTag": "63de5fdd-dfb7-4d9f-9b6b-7085665ad96a",
+                "ordinal": 1
+              },
+              {
+                "name": "Month",
+                "column": "Month",
+                "lineageTag": "d421be17-55f6-49a4-a185-8227e7f3ef10",
+                "ordinal": 2
+              },
+              {
+                "name": "Day",
+                "column": "Day",
+                "lineageTag": "fb40567e-790a-4a9f-8689-a6492938ffe4",
+                "ordinal": 3
+              }
+            ],
+            "lineageTag": "00cb8ce2-2847-432f-ae02-9c0eedb845df"
+          }
+        ],
+        "isHidden": true,
+        "lineageTag": "366f897a-9dbd-49e5-9ae0-a3ef27116843",
+        "partitions": [
+          {
+            "name": "LocalDateTable_cb8e5509-75d1-4a14-ba9a-dcf8b67e8055",
+            "mode": "import",
+            "source": {
+              "expression": "Calendar(Date(Year(MIN('BI Capex Assets'[PurchaseDate])), 1, 1), Date(Year(MAX('BI Capex Assets'[PurchaseDate])), 12, 31))",
+              "type": "calculated"
+            }
+          }
+        ],
+        "showAsVariationsOnly": true
+      }
+    ]
+  }
+}
