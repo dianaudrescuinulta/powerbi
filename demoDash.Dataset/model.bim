@@ -561,6 +561,18 @@
             "expression": "[Gross Book Value] - [Accumulated Depreciation]",
             "formatString": "\\$#,0.###############;(\\$#,0.###############);\\$#,0.###############",
             "lineageTag": "a7e80b23-4c00-4135-8f16-db114f08bb56"
+          },
+          {
+            "name": "toDelete",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"currencyCulture\":\"en-US\"}"
+              }
+            ],
+            "expression": "sum('BI Capex Facts'[Amount])",
+            "formatString": "\\$#,0.###############;(\\$#,0.###############);\\$#,0.###############",
+            "lineageTag": "b0124921-275e-4d96-86c9-d082a24cd7be"
           }
         ],
         "partitions": [
