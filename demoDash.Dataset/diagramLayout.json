@@ -1,0 +1,100 @@
+{
+  "version": "1.1.0",
+  "diagrams": [
+    {
+      "ordinal": 0,
+      "scrollPosition": {
+        "x": 0,
+        "y": 0
+      },
+      "nodes": [
+        {
+          "location": {
+            "x": 666,
+            "y": 605
+          },
+          "nodeIndex": "BI Capex AssetEventTypes",
+          "nodeLineageTag": "261ba742-d039-4007-bcc0-8aedf91fd9db",
+          "size": {
+            "height": 152,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 318,
+            "y": 287
+          },
+          "nodeIndex": "BI Capex Assets",
+          "nodeLineageTag": "f986f130-b160-43b8-ad97-ae06482af137",
+          "size": {
+            "height": 248,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 319,
+            "y": 24
+          },
+          "nodeIndex": "BI Capex Categories",
+          "nodeLineageTag": "6d9637de-5daf-45ea-b3f0-119b18214ff1",
+          "size": {
+            "height": 152,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 666,
+            "y": 305
+          },
+          "nodeIndex": "BI Capex Facts",
+          "nodeLineageTag": "30514307-1596-4f55-b1da-3ea9c9f4e18e",
+          "size": {
+            "height": 224,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 669,
+            "y": 14
+          },
+          "nodeIndex": "BI Capex Measures",
+          "nodeLineageTag": "4545d1cb-2b17-4575-a16a-ae2580bf75eb",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 1039,
+            "y": 330
+          },
+          "nodeIndex": "BI Dates",
+          "nodeLineageTag": "e34dcfdb-219e-45db-9208-f9390956a102",
+          "size": {
+            "height": 176,
+            "width": 234
+          },
+          "zIndex": 0
+        }
+      ],
+      "name": "All tables",
+      "zoomValue": 100,
+      "pinKeyFieldsToTop": false,
+      "showExtraHeaderInfo": false,
+      "hideKeyFieldsWhenCollapsed": false,
+      "tablesLocked": false
+    }
+  ],
+  "selectedDiagram": "All tables",
+  "defaultDiagram": "All tables"
+}
